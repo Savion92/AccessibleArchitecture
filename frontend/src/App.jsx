@@ -12,7 +12,7 @@ import SignUp from "./pages/SignUp";
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
