@@ -56,7 +56,6 @@ export const signup = async (req, res) => {
         .json({ error: "Invalid user data, user wasn't created." });
     }
   } catch (error) {
-    console.log(req);
     console.log(
       `User was not created, check the signup controller: ${error.message} `
     );
@@ -65,13 +64,47 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  res.json({
-    data: "You're at login",
-  });
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+    const isValidPassword = await bcrypt.compare(
+      password,
+      user?.password || ""
+    );
+
+    if (!user || !isValidPassword) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    generateTAndSetC(user._id, res);
+    res.status(200).json({
+      _id: user._id,
+      userName: user.username,
+      email: user.email,
+      websites: user.websites,
+    });
+  } catch (error) {
+    console.log(`Login failure: ${error.message} `);
+    res.status(500).json({ error: "Server Error" });
+  }
 };
 
 export const logout = async (req, res) => {
-  res.json({
-    data: "You're at logout",
-  });
+  try {
+    res.cookie("token", "", { maxAge: 0 });
+    res.status(200).json({ message: "Logged out" });
+  } catch (error) {
+    console.log(`Logout failure: ${error.message} `);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
+export const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password");
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(`getUser failure: ${error.message} `);
+    res.status(500).json({ error: "Server Error" });
+  }
 };
