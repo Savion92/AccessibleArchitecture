@@ -11,7 +11,7 @@ const getDomain = (url) => {
 
 function ContentCard({ title, url, subHeading, text }) {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "17rem" }} className="shadow">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{subHeading}</Card.Subtitle>

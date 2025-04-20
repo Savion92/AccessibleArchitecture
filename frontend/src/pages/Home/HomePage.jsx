@@ -4,46 +4,9 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Stack from "react-bootstrap/Stack";
-import ContentCard from "../components/ContentCards";
+import ContentCard from "../../components/ContentCards";
 
-const guidelines = [
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-  {
-    title: "Web Content Accessibility Guidelines",
-    url: "https://www.w3.org/TR/WCAG21/",
-    subHeading: "WCAG 2.1",
-    text: "Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more accessible. ",
-  },
-];
+import { guidelines } from "./cardData";
 
 const playerOpts = { playerVars: { cc_load_policy: 1, rel: 0 } };
 const HomePage = () => {
@@ -89,7 +52,7 @@ const HomePage = () => {
         </Col>
       </Row>
       <h1>Guidelines</h1>
-      <Row className>
+      <Row className="gap-4">
         {guidelines.map((guideLine) => {
           return (
             <ContentCard
