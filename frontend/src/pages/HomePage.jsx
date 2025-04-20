@@ -1,3 +1,5 @@
+import YouTube from "react-youtube";
+
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -43,6 +45,7 @@ const guidelines = [
   },
 ];
 
+const playerOpts = { playerVars: { cc_load_policy: 1, rel: 0 } };
 const HomePage = () => {
   return (
     <Container fluid>
@@ -81,14 +84,8 @@ const HomePage = () => {
             </p>
           </Stack>
         </Col>
-        <Col sm={5}>
-          {/* <iframe
-            class="video responsive-iframe"
-            title="Youtube player"
-            sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
-            src={`https://youtube.com/embed/5H1JGdqLrWo?autoplay=0`}
-            styles=" height: 100%, width: 100%"
-          ></iframe> */}
+        <Col sm={5} className="mt-5">
+          <YouTube videoId="5H1JGdqLrWo" opts={playerOpts} />
         </Col>
       </Row>
       <h1>Guidelines</h1>

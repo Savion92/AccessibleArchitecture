@@ -6,8 +6,11 @@ import Row from "react-bootstrap/Row";
 
 const Contact = () => {
   return (
-    <Container className="p-5 my-5 border">
-      <Form>
+    <Container
+      className="mt-5 p-5"
+      style={{ maxWidth: "600px", minHeight: "80vh" }}
+    >
+      <Form className="border border-4 rounded-3 p-3 shadow">
         <Row className="mb-3">
           <Form.Group as={Col} controlId="">
             <Form.Label>Email</Form.Label>
@@ -31,7 +34,7 @@ const Contact = () => {
           rows="4"
           placeholder="Message"
         ></textarea>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="shadow-lg">
           Submit
         </Button>
       </Form>
