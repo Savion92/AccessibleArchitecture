@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./pages/Homepage";
 import Contact from "./pages/Contact";
 import Checklists from "./pages/Checklists";
-import Login from "./pages/Login";
+import Login from "./pages/Auth/Login";
 import Navigation from "./components/Navigation";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/Auth/SignUp";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
+      <Footer />
     </Container>
   );
 }

@@ -1,15 +1,20 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Stack from "react-bootstrap/Stack";
+
 
 const Navigation = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Link to={"/"}>
-          <Navbar.Brand href="#home">👁️‍🗨️ Accessible Architecture</Navbar.Brand>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Stack>
+            <Navbar.Brand href="#home">👁️‍🗨️ Accessible Architecture</Navbar.Brand>
+            For HTML
+          </Stack>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
