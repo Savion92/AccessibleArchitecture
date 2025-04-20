@@ -11,9 +11,9 @@ import { guidelines } from "./cardData";
 const playerOpts = { playerVars: { cc_load_policy: 1, rel: 0 } };
 const HomePage = () => {
   return (
-    <Container fluid>
-      <Row className="px-4 my-5">
-        <Col sm={7}>
+    <Container fluid style={{ paddingBottom: "5rem" }}>
+      <Row className="px-4 my-5" d-flex justify-content-center>
+        <Col sm-8 mx-5 me-auto>
           <Stack>
             <h1>Crawling for Accessibility</h1>
             <p class="mt-5">
@@ -47,11 +47,11 @@ const HomePage = () => {
             </p>
           </Stack>
         </Col>
-        <Col sm={5} className="mt-5">
+        <Col className="mt-5 sm-4 offset-md-1">
           <YouTube videoId="5H1JGdqLrWo" opts={playerOpts} />
         </Col>
       </Row>
-      <h1>Guidelines</h1>
+      <h1 class="text-center mb-3">Guidelines</h1>
       <Row className="gap-4">
         {guidelines.map((guideLine) => {
           return (

@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 
 const Footer = () => {
   return (
-    <footer class="footer fix-bottom mt-5">
-      <Container fluid className="bg-light shadow">
+    <footer class="footer fixed-bottom ">
+      <Container fluid className="bg-primary bg-gradient shadow">
         <Row>
           <Col>
             &copy; Savion Sweeney April 22, 2025
