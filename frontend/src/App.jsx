@@ -1,11 +1,12 @@
 import Container from "react-bootstrap/Container";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "./pages/Home/HomePage";
 import Contact from "./pages/Contact";
-import Checklists from "./pages/Checklists";
+import Checklists from "./pages/Lists/Checklists";
 import Login from "./pages/Auth/Login";
 import Navigation from "./components/Navigation";
 import SignUp from "./pages/Auth/SignUp";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
       <Footer />
+      <Toaster />
     </Container>
   );
 }

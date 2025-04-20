@@ -5,17 +5,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Stack from "react-bootstrap/Stack";
 
-
 const Navigation = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Link to={"/"} style={{ textDecoration: "none" }}>
-          <Stack>
-            <Navbar.Brand href="#home">👁️‍🗨️ Accessible Architecture</Navbar.Brand>
-            For HTML
-          </Stack>
-        </Link>
+        <Stack>
+          <Navbar.Brand href="/">👁️‍🗨️ Accessible Architecture</Navbar.Brand>
+          For HTML
+        </Stack>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
