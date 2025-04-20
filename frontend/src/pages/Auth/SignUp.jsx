@@ -26,13 +26,11 @@ const SignUp = () => {
         const data = await res.json();
         console.log(data);
 
-        if (!res.ok) throw new Error(data.error);
-        if (data.error) throw new Error(data.error);
+        if (!res.ok) throw new Error(data.error || "Something went wrong");
 
         return data;
       } catch (error) {
         console.log(error);
-        // toast.error(error.message);
         throw error;
       }
     },
@@ -48,7 +46,6 @@ const SignUp = () => {
     e.preventDefault();
     console.log("Sign up attempted with:", { ...formData });
     mutate({ ...formData });
-    // Here you would typically send a request to your server
   };
 
   const handleInputs = (e) => {
