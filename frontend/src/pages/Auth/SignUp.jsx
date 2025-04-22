@@ -12,7 +12,7 @@ const SignUp = () => {
     password: "",
   });
 
-  const { mutate, isError, error, isPending } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async ({ email, username, password }) => {
       try {
         const res = await fetch("/api/auth/signup", {
@@ -24,7 +24,6 @@ const SignUp = () => {
         });
 
         const data = await res.json();
-        console.log(data);
 
         if (!res.ok) throw new Error(data.error || "Something went wrong");
 
@@ -35,7 +34,8 @@ const SignUp = () => {
       }
     },
     onSuccess: () => {
-      toast.success("You have been registered");
+      setFormData({ email: "", username: "", password: "" });
+      toast.success("You have been signed up");
     },
     onError: (error) => {
       toast.error(error.message);
@@ -53,9 +53,9 @@ const SignUp = () => {
   };
 
   return (
-    <Container>
-      <Row className="justify-content-md-center mt-5 login-wrapper">
-        <Col xs={12} md={6} className="login-form-container">
+    <Container fluid className="d-flex justify-content-center">
+      <Row className="mt-5 login-wrapper">
+        <Col xs={12} md={6} className="login-form-container shadow">
           <h2 className="text-center mb-4">Sign Up</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="email">
@@ -68,6 +68,7 @@ const SignUp = () => {
                 name="email"
               />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="username">
               <Form.Label>Username</Form.Label>
               <Form.Control
@@ -89,10 +90,11 @@ const SignUp = () => {
                 name="password"
               />
             </Form.Group>
-
-            <Button variant="primary" type="submit" className="w-100">
-              {isPending ? "Loading..." : "Sign up"}
-            </Button>
+            <Col style={{ marginLeft: "4rem" }}>
+              <Button variant="primary" type="submit" className="w-59 shadow">
+                {isPending ? "Loading..." : "Sign up"}
+              </Button>
+            </Col>
           </Form>
         </Col>
       </Row>

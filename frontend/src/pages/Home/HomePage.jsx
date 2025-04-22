@@ -9,11 +9,12 @@ import ContentCard from "../../components/ContentCards";
 import { guidelines } from "./cardData";
 
 const playerOpts = { playerVars: { cc_load_policy: 1, rel: 0 } };
+
 const HomePage = () => {
   return (
     <Container fluid style={{ paddingBottom: "5rem" }}>
       <Row className="px-4 my-5 d-flex justify-content-center">
-        <Col className="sm-8 mx-5 me-auto">
+        <Col className="sm-8 mx-5 my-auto">
           <Stack>
             <h1>Crawling for Accessibility</h1>
             <p className="mt-5">
@@ -52,7 +53,10 @@ const HomePage = () => {
               those with disabilities.
               <br />
               <br />
-              <em>We aim to crawl your website, and ensure it's accesible!</em>
+              <em>
+                We aim to crawl your website, and ensure it's accessible!
+                (Coming soon)
+              </em>
             </p>
           </Stack>
         </Col>

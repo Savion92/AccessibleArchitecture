@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
 
-  const { mutate, isError, error, isPending } = useMutation({
+  const { mutate } = useMutation({
     mutationFn: async ({ username, password }) => {
       try {
         const res = await fetch("/api/auth/login", {
@@ -78,10 +78,11 @@ const Login = () => {
                 name="password"
               />
             </Form.Group>
-
-            <Button variant="primary" type="submit" className="w-50 shadow">
-              Login
-            </Button>
+            <Col style={{ marginLeft: "4rem" }}>
+              <Button variant="primary" type="submit" className="w-50 shadow ">
+                Login
+              </Button>
+            </Col>
           </Form>
         </Col>
       </Row>
@@ -90,3 +91,6 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
