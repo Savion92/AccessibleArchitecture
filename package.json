@@ -1,8 +1,8 @@
 {
+  "homepage": "https://savion92.github.io/AcessibleArchitecture",
   "name": "accessiblearchitecture",
   "version": "1.0.0",
   "main": "backend/server.js",
-  "homepage": "https://savion92.github.io/AcessibleArchitecture",
   "scripts": {
     "dev": "NODE_ENV=development nodemon backend/server.js",
     "start": "NODE_ENV=production node backend/server.js",
