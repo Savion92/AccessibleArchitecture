@@ -65,7 +65,7 @@ const HomePage = () => {
         </Col>
       </Row>
       <h1 className="text-center mb-3">Guidelines</h1>
-      <Row className="gap-4">
+      <Row className="gap-4 justify-content-center">
         {guidelines.map((guideLine, i) => {
           return (
             <ContentCard
