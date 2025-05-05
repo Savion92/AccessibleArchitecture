@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Stack from "react-bootstrap/Stack";
 
 const Navigation = () => {
@@ -18,17 +19,20 @@ const Navigation = () => {
           <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link href="/">🏠</Nav.Link>
+            <NavDropdown title="Account" id="nav-dropdown">
+              <NavDropdown.Item href="/login" eventKey={4}>
+                Login
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/signup" eventKey={5}>
+                Sign Up
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link eventKey={2} href="/contact">
               Contact
             </Nav.Link>
             <Nav.Link eventKey={3} href="/checklists">
               Checklists
-            </Nav.Link>
-            <Nav.Link eventKey={4} href="/login">
-              Login
-            </Nav.Link>
-            <Nav.Link eventKey={5} href="/signUp">
-              Sign Up
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
